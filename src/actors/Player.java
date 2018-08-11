@@ -6,14 +6,18 @@ import java.awt.event.KeyEvent;
 public class Player extends Actor implements KeyboardControllable {
 
     private boolean up,down,left,right;
+    private int turningSpeed;
+    private int cruiseSpeed;
+    private int score;
+    private int vx;
+    private int vy;
 
     public Player(Stage stage) {
         super(stage);
         sprites = new String[]{"redBox.png"};
-        frame = 0;
-        frameSpeed = 35;
-        xSpeed = 10;
-        ySpeed = 8;
+        turningSpeed = 10;
+        speed = 11;
+        cruiseSpeed = 4;
         width = 128;
         height = 256;
         posX = Stage.WIDTH/2 - width/2;
@@ -22,20 +26,28 @@ public class Player extends Actor implements KeyboardControllable {
     
     public void update() {
         super.update();
+        updateScore();
         updateSpeed();
     }
-	
-    protected void updateSpeed() {
 
+    public int getScore() {
+        return score;
+    }
+
+    private void updateScore() {
+        score += 1;
+    }
+	
+    private void updateSpeed() {
         int horizontalDirection = (right ? 1 : 0) - (left ? 1 : 0);
         int verticalDirection = (down ? 1 : 0) - (up ? 1 : 0);
 
-        vx = horizontalDirection * xSpeed;
+        vx = horizontalDirection * turningSpeed;
 
         if (verticalDirection == 0) {
-            vy = 4;
+            vy = cruiseSpeed;
         } else {
-            vy = verticalDirection * ySpeed;
+            vy = verticalDirection * speed;
         }
 
         //don't allow scrolling off the edge of the screen		
