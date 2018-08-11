@@ -14,8 +14,8 @@ public class Moose extends Actor {
         random = new Random();
         sprites = new String[]{"moose.png"};
         speed = 16;
-        width = 128;
-        height = 128;
+        width = 64;
+        height = 64;
         walkSpeed = random.nextBoolean() ? 2 : -2;
     }
 

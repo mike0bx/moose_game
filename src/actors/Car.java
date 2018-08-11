@@ -8,8 +8,8 @@ public class Car extends Actor {
         super(stage);
         sprites = new String[]{"greenBox.png"};
         speed = 2;
-        width = 128;
-        height = 256;
+        width = 64;
+        height = 128;
     }
     
     public void update() {

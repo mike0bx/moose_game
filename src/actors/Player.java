@@ -18,8 +18,8 @@ public class Player extends Actor implements KeyboardControllable {
         turningSpeed = 10;
         speed = 11;
         cruiseSpeed = 4;
-        width = 128;
-        height = 256;
+        width = 64;
+        height = 128;
         posX = Stage.WIDTH/2 - width/2;
         posY = Stage.HEIGHT/2 + height/2;
     }

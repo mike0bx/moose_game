@@ -8,8 +8,8 @@ public class Background extends Actor {
         super(stage);
         sprites = new String[]{"background.png"};
         speed = 16;
-        width = 1080;
-        height = 3840;
+        width = 720;
+        height = 2560;
         posX = 0;
         posY = -height / 2;
     }
